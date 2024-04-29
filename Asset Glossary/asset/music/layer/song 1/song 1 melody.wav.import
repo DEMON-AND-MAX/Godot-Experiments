@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ki8bhc72kxil"
+path="res://.godot/imported/song 1 melody.wav-ff9374f6d6d9ca3f2b3f45c78a17d2e9.sample"
+
+[deps]
+
+source_file="res://asset/music/layer/song 1/song 1 melody.wav"
+dest_files=["res://.godot/imported/song 1 melody.wav-ff9374f6d6d9ca3f2b3f45c78a17d2e9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

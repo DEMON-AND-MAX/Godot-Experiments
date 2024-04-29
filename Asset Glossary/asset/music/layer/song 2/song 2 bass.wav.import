@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ckwynab64bx22"
+path="res://.godot/imported/song 2 bass.wav-00f2ecf755f3a47fdcdc28399fae6bbd.sample"
+
+[deps]
+
+source_file="res://asset/music/layer/song 2/song 2 bass.wav"
+dest_files=["res://.godot/imported/song 2 bass.wav-00f2ecf755f3a47fdcdc28399fae6bbd.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
