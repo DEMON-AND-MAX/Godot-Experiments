@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dwa1cjf8t811t"]
 
-[ext_resource type="Script" path="res://script/test/test.gd" id="1_0oaxn"]
+[ext_resource type="Script" path="res://test.gd" id="1_0oaxn"]
 [ext_resource type="Script" path="res://script/asset_glossary.gd" id="2_somsm"]
 [ext_resource type="Script" path="res://script/music_manager.gd" id="3_jvode"]
 

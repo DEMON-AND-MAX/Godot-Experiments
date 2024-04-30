@@ -1,5 +1,5 @@
 class_name AssetGlossary
-extends Node
+extends Runnable
 
 """
 ASSET GLOSSARY
@@ -32,11 +32,11 @@ Export variables
 
 @export var asset_dir_path: String = "res://asset/"
 
-@export var ignore_extension_list: Array = [
+@export var ignore_extension_list: Array[String] = [
 	"import",
 ]
-@export var unoptimal_extension_list: Array = [
-	
+@export var unoptimal_extension_list: Array[String] = [
+	"wav", "mp3"
 ]
 
 @export var b_load_unoptimal: bool = true
@@ -44,26 +44,28 @@ Export variables
 
 var asset_glossary: Dictionary
 
-func generate_glossary() -> void:
+func run() -> void:
+	_generate_glossary()
+
+func _generate_glossary() -> void:
 	_parse_folder(asset_dir_path)
 
 func _parse_folder(dir_path: String) -> void:
 	var dir = DirAccess.open(dir_path)
-	if dir:
-		dir.list_dir_begin()
-		var file = dir.get_next()
-		while file != "":
-			var file_path = dir.get_current_dir() + "/" + file
-			if dir.current_is_dir():
-				_parse_folder(file_path)
-			else:
-				_add_to_glossary(file_path,
-				file.get_extension())
-			file = dir.get_next()
-		dir.list_dir_end()
-	else:
-		assert(false, 
-		"An error occured trying to access the asset directory.")
+	
+	assert(dir, "An error occured trying to access the asset directory.")
+	
+	dir.list_dir_begin()
+	var file = dir.get_next()
+	while file != "":
+		var file_path = dir.get_current_dir() + "/" + file
+		if dir.current_is_dir():
+			_parse_folder(file_path)
+		else:
+			_add_to_glossary(file_path,
+			file.get_extension())
+		file = dir.get_next()
+	dir.list_dir_end()
 
 func _add_to_glossary(file_path: String, file_extension: String = "") -> void:
 	if file_extension in ignore_extension_list:
@@ -75,9 +77,9 @@ func _add_to_glossary(file_path: String, file_extension: String = "") -> void:
 	
 	if file_extension in unoptimal_extension_list:
 		if b_print_warnings:
-			print("Warning: " + file_path_split[-1] + 
-			" is of an unused file type, consider converting this 
-			to a supported file type!")
+			print("WARNING: " + file_path_split[-1] + 
+			" is of an unoptimal file type, consider converting " +
+			"to a different type!")
 		if !b_load_unoptimal:
 			return
 	
@@ -91,10 +93,14 @@ func _add_to_glossary(file_path: String, file_extension: String = "") -> void:
 	
 	current_dict = current_dict[file_path_split[3]]
 	
-	if file_path_split[-1].contains(file_path_split[-2]):
+	if file_name.contains(file_path_split[-2]):
 		if file_path_split[-2] not in current_dict.keys():
 			current_dict[file_path_split[-2]] = Dictionary()
 		
 		current_dict = current_dict[file_path_split[-2]]
+	
+	# remove parent folder name from the child
+	if file_name.find(file_path_split[-2]) != -1:
+		file_name = file_name.erase(file_name.find(file_path_split[-2]), file_path_split[-2].length() + 1)
 	
 	current_dict[file_name] = file_path

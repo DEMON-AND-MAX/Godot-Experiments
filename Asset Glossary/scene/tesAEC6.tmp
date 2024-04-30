@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwa1cjf8t811t"]
+
+[ext_resource type="Script" path="res://test.gd" id="1_0oaxn"]
+[ext_resource type="Script" path="res://script/asset_glossary.gd" id="2_somsm"]
+[ext_resource type="Script" path="res://scene/music_manager.gd" id="3_jvode"]
+
+[sub_resource type="AudioStreamWAV" id="AudioStreamWAV_ia35b"]
+
+[node name="Test" type="Node2D"]
+script = ExtResource("1_0oaxn")
+
+[node name="Asset Glossary" type="Node" parent="."]
+script = ExtResource("2_somsm")
+
+[node name="Music Manager" type="Node" parent="."]
+script = ExtResource("3_jvode")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Music Manager"]
+stream = SubResource("AudioStreamWAV_ia35b")

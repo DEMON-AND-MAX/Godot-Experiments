@@ -1,7 +1,6 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1714484195
+::res://::1714501668
 icon.svg::CompressedTexture2D::3617376941445157166::1714383526::1714383533::1::::<><>::
-test.gd::GDScript::-1::1714413061::0::1::::<>Node2D<>::
 ::res://asset/::1714387267
 ::res://asset/music/::1714391685
 ::res://asset/music/layer/::1714407184
@@ -21,7 +20,12 @@ example2.wav::AudioStreamWAV::1262364821090073602::1714411494::1714411494::1::::
 example3.wav::AudioStreamWAV::6519972494559291583::1714411498::1714411498::1::::<><>::
 ::res://asset/sprite/::1714387267
 ::res://asset/tilemap/::1714387248
-::res://scene/::1714414049
-test_scene.tscn::PackedScene::8704999306476014215::1714414049::0::1::::<><>::res://test.gd<>res://script/asset_glossary.gd
-::res://script/::1714413961
-asset_glossary.gd::GDScript::-1::1714413961::0::1::::AssetGlossary<>Node<>::
+::res://scene/::1714501669
+test_scene.tscn::PackedScene::8704999306476014215::1714501677::0::1::::<><>::res://script/test.gd<>res://script/asset_glossary.gd<>res://script/music_manager.gd
+::res://script/::1714501675
+asset_glossary.gd::GDScript::-1::1714501160::0::1::::AssetGlossary<>Runnable<>::
+music_manager.gd::GDScript::-1::1714501633::0::1::::MusicManager<>Runnable<>::
+test.gd::GDScript::-1::1714501176::0::1::::<>Node2D<>::
+::res://script/interface/::1714501207
+runnable.gd::GDScript::-1::1714501117::0::1::::Runnable<>Node<>::
+::res://script/test/::1714501675
