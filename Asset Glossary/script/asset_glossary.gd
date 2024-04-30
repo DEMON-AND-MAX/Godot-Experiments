@@ -8,36 +8,38 @@ every single file, sorted by extension for quick ease of access to file
 paths within the project.
 
 Quick tip
-	Keep "b_load_unsuitable" true until the end of production session,
+	Keep "b_load_unoptimal" true until the end of production session,
 	turn it off when the project needs tightening and compression to
 	easily gauge what files can be converted to smaller, faster file
 	types.
 
 Export variables
 	asset_dir_path: 
-		select the base asset folder
+		base asset folder
 	
 	ignore_extension_list: 
 		list of extensions to completely ignore
 	
-	unsuitable_extension_list:
+	unoptimal_extension_list:
 		list of extensions that should not be used within the project
 	
-	b_load_unsuitable:
-		if files with unsuitable extensions should be loaded or not
+	b_load_unoptimal:
+		if files with unoptimal extensions should be loaded
 	
 	b_print_warnings:
-		if warning messages should be printed or not
+		if warning messages should be printed
 """
 
 @export var asset_dir_path: String = "res://asset/"
+
 @export var ignore_extension_list: Array = [
 	"import",
 ]
-@export var unsuitable_extension_list: Array = [
-	#"wav",
+@export var unoptimal_extension_list: Array = [
+	
 ]
-@export var b_load_unsuitable: bool = true
+
+@export var b_load_unoptimal: bool = true
 @export var b_print_warnings: bool = true
 
 var asset_glossary: Dictionary
@@ -63,18 +65,20 @@ func _parse_folder(dir_path: String) -> void:
 		assert(false, 
 		"An error occured trying to access the asset directory.")
 
-func _add_to_glossary(file_path: String, file_extension: String) -> void:
+func _add_to_glossary(file_path: String, file_extension: String = "") -> void:
 	if file_extension in ignore_extension_list:
 		return
 	
 	var file_path_split = file_path.split("/")
+	var file_name = file_path_split[-1].split(".")[0]
+	file_extension = file_path_split[-1].split(".")[1]
 	
-	if file_extension in unsuitable_extension_list:
+	if file_extension in unoptimal_extension_list:
 		if b_print_warnings:
 			print("Warning: " + file_path_split[-1] + 
 			" is of an unused file type, consider converting this 
 			to a supported file type!")
-		if !b_load_unsuitable:
+		if !b_load_unoptimal:
 			return
 	
 	if file_extension not in asset_glossary.keys():
@@ -93,4 +97,4 @@ func _add_to_glossary(file_path: String, file_extension: String) -> void:
 		
 		current_dict = current_dict[file_path_split[-2]]
 	
-	current_dict[file_path_split[-1].split(".")[0]] = file_path
+	current_dict[file_name] = file_path
