@@ -21,3 +21,4 @@ script = ExtResource("1_0oaxn")
 [node name="Asset Glossary" type="Node" parent="."]
 script = ExtResource("2_somsm")
 dir_data_list = Array[ExtResource("3_cmrl2")]([SubResource("Resource_snpvt")])
+max_dir_depth = 4
