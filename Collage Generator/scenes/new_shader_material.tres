@@ -1,0 +1,6 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://0tidgevs7e5j"]
+
+[ext_resource type="Shader" path="res://scenes/crop_white.gdshader" id="1_ytpi4"]
+
+[resource]
+shader = ExtResource("1_ytpi4")

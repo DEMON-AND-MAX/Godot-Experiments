@@ -1,0 +1,10 @@
+Node2D
+ColorRect
+CanvasLayer
+Sprite2D
+Camera2D
+TileMap
+Area2D
+ShapeCast2D
+CollisionShape2D
+Polygon2D

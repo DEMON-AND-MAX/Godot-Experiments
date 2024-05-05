@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://qe7vrpx0s7c1"]
+
+[ext_resource type="Script" path="res://world.gd" id="1_urcby"]
+[ext_resource type="PackedScene" uid="uid://kd0blo1km2rh" path="res://scenes/area_spawner.tscn" id="2_ssf4g"]
+[ext_resource type="Texture2D" uid="uid://s2w2br20bpp8" path="res://image.png" id="3_ni3fv"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_urcby")
+
+[node name="Image" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-42, 102)
+texture = ExtResource("3_ni3fv")
+
+[node name="ColorRect" parent="." instance=ExtResource("2_ssf4g")]
+offset_left = -486.0
+offset_top = -292.0
+offset_right = 453.0
+offset_bottom = 288.0
+sprite_rotation_delta = 2.0
+
+[node name="Camera2D" type="Camera2D" parent="."]

@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://dm4f2hscbovnq"]
+
+[ext_resource type="Script" path="res://sprite_disperser.gd" id="1_47ebl"]
+[ext_resource type="Texture2D" uid="uid://dhqy8q0upny4w" path="res://block 1/bloc 1.png" id="2_dut63"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_abbnk"]
+frequency = 0.0064
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_fkhvu"]
+noise = SubResource("FastNoiseLite_abbnk")
+
+[node name="Sprite Disperser" type="Node2D"]
+script = ExtResource("1_47ebl")
+image_texture_list = Array[Texture2D]([ExtResource("2_dut63")])
+noise_texture = SubResource("NoiseTexture2D_fkhvu")
+amount = 0.349
+
+[node name="Resources" type="Node2D" parent="."]
+
+[node name="Boundary" type="ColorRect" parent="Resources"]
+offset_right = 701.0
+offset_bottom = 534.0
+color = Color(1, 1, 1, 0.196078)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(351, 264)
+zoom = Vector2(1.195, 1.195)
