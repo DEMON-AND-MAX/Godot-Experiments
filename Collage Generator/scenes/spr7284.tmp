@@ -1,0 +1,32 @@
+[gd_scene load_steps=9 format=3 uid="uid://dm4f2hscbovnq"]
+
+[ext_resource type="Script" path="res://sprite_disperser.gd" id="1_47ebl"]
+[ext_resource type="Texture2D" uid="uid://dhqy8q0upny4w" path="res://block 1/bloc 1.png" id="2_dut63"]
+[ext_resource type="Material" uid="uid://0tidgevs7e5j" path="res://scenes/new_shader_material.tres" id="3_hgxcd"]
+[ext_resource type="Texture2D" uid="uid://cgk6lmlud18u0" path="res://block 1/bloc 2.png" id="3_wk2iu"]
+[ext_resource type="Texture2D" uid="uid://dpnrqqpsahvuj" path="res://block 1/bloc 3.png" id="4_j37d8"]
+[ext_resource type="Texture2D" uid="uid://dbnv3ajc3wys8" path="res://block 1/bloc 4.png" id="5_k52s6"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_abbnk"]
+noise_type = 5
+frequency = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_fkhvu"]
+noise = SubResource("FastNoiseLite_abbnk")
+
+[node name="Sprite Disperser" type="Node2D"]
+script = ExtResource("1_47ebl")
+image_texture_list = Array[Texture2D]([ExtResource("2_dut63"), ExtResource("3_wk2iu"), ExtResource("4_j37d8"), ExtResource("5_k52s6")])
+noise_texture = SubResource("NoiseTexture2D_fkhvu")
+amount = 0.741
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 701.0
+offset_bottom = 534.0
+color = Color(1, 1, 1, 0.196078)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = ExtResource("3_hgxcd")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)

@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://dm4f2hscbovnq"]
+
+[ext_resource type="Script" path="res://sprite_disperser.gd" id="1_47ebl"]
+[ext_resource type="Texture2D" uid="uid://cnce1fjynlbf4" path="res://icon.svg" id="2_jj4xs"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_abbnk"]
+frequency = 0.0036
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_fkhvu"]
+in_3d_space = true
+noise = SubResource("FastNoiseLite_abbnk")
+
+[node name="Sprite Disperser" type="Node2D"]
+script = ExtResource("1_47ebl")
+image_texture_list = Array[Texture2D]([ExtResource("2_jj4xs")])
+noise_texture = SubResource("NoiseTexture2D_fkhvu")
+
+[node name="Resources" type="Node2D" parent="."]
+
+[node name="Boundary" type="ColorRect" parent="Resources"]
+offset_right = 171.0
+offset_bottom = 130.0
+color = Color(1, 1, 1, 0.196078)
+
+[node name="Sprites" type="Node2D" parent="."]
