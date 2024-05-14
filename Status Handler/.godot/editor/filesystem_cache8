@@ -1,0 +1,13 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1715677325
+control.tscn::PackedScene::8495736638265180008::1715455436::0::1::::<><>::res://Label.gd<>uid://c4upaqw0g4jbb::::res://resource/test.tres
+icon.svg::CompressedTexture2D::2882392676225657199::1715246987::1715246992::1::::<><>::
+Label.gd::GDScript::-1::1715451791::0::1::::<>Label<>::
+::res://resource/::1715455436
+test.tres::Resource/StatusHandler::6850517018366187055::1715455436::0::1::::<><>::res://script/status_handler.gd<>res://script/stat_cap.gd
+::res://script/::1715451810
+stat.gd::GDScript::-1::1715451810::0::1::::Stat<>Resource<>::
+status_handler.gd::GDScript::-1::1715451791::0::1::::StatusHandler<>Resource<>::
+stat_base.gd::GDScript::-1::1715329851::0::1::::StatBase<>Stat<>::
+stat_cap.gd::GDScript::-1::1715340314::0::1::::StatCap<>StatBase<>::
+stat_const.gd::GDScript::-1::1715329803::0::1::::StatConst<>Stat<>::

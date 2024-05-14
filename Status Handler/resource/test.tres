@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="StatusHandler" load_steps=5 format=3 uid="uid://c4upaqw0g4jbb"]
+
+[ext_resource type="Script" path="res://script/status_handler.gd" id="1_lpg3e"]
+[ext_resource type="Script" path="res://script/stat_cap.gd" id="2_hgn2e"]
+
+[sub_resource type="Resource" id="Resource_tqf1k"]
+script = ExtResource("2_hgn2e")
+stat_cap = 100.0
+stat_min = 0.0
+stat_max = 100.0
+stat_value = 10.0
+stat_name = "health"
+
+[sub_resource type="Resource" id="Resource_6txg5"]
+script = ExtResource("2_hgn2e")
+stat_cap = 10.0
+stat_min = 0.0
+stat_max = 100.0
+stat_value = 0.0
+stat_name = "shield"
+
+[resource]
+script = ExtResource("1_lpg3e")
+handler_name = "PlayerStat"
+stat_list = Array[Resource("res://script/stat.gd")]([SubResource("Resource_tqf1k"), SubResource("Resource_6txg5"), null])
