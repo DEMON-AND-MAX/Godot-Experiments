@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://qe7vrpx0s7c1"]
+[gd_scene load_steps=21 format=3 uid="uid://qe7vrpx0s7c1"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_urcby"]
 [ext_resource type="Texture2D" uid="uid://dhqy8q0upny4w" path="res://block 1/bloc 1.png" id="3_5qbyu"]
@@ -8,7 +8,12 @@
 [ext_resource type="Texture2D" uid="uid://dpnrqqpsahvuj" path="res://block 1/bloc 3.png" id="5_qnkoc"]
 [ext_resource type="Shader" path="res://scenes/color.gdshader" id="5_u6w63"]
 [ext_resource type="Texture2D" uid="uid://dbnv3ajc3wys8" path="res://block 1/bloc 4.png" id="6_giykg"]
+[ext_resource type="Texture2D" uid="uid://cf00qvgsipy2u" path="res://scenes/Photoscanned Cotton 1.png" id="8_ifk4k"]
 [ext_resource type="Shader" path="res://scenes/rrrr.gdshader" id="8_mgf8t"]
+[ext_resource type="Texture2D" uid="uid://bg0axoa1rve5m" path="res://scenes/Photoscanned Cotton 2.png" id="9_nip2e"]
+[ext_resource type="Shader" path="res://scenes/pixel.gdshader" id="10_6u7vm"]
+[ext_resource type="Texture2D" uid="uid://daanxuup88nn3" path="res://scenes/Photoscanned Cotton 3.png" id="10_e5jq7"]
+[ext_resource type="Texture2D" uid="uid://wi67ygo2iwbw" path="res://scenes/Photoscanned Cotton 4.png" id="11_feg51"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yajhr"]
 shader = ExtResource("4_4tc4c")
@@ -22,7 +27,7 @@ shader = ExtResource("8_mgf8t")
 
 [sub_resource type="Gradient" id="Gradient_ec7g4"]
 offsets = PackedFloat32Array(0.0458333, 0.558333, 0.929167, 1)
-colors = PackedColorArray(0.176419, 0.176419, 0.176419, 1, 0, 0, 0, 1, 0.904989, 0.88, 0.880623, 1, 1, 1, 1, 1)
+colors = PackedColorArray(0.193973, 0.174057, 0.138242, 1, 0.203922, 0.0823529, 0.0627451, 1, 0.94, 0.8977, 0.799, 1, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_afqb1"]
 gradient = SubResource("Gradient_ec7g4")
@@ -33,8 +38,12 @@ repeat = 2
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mrisa"]
 shader = ExtResource("5_u6w63")
-shader_parameter/amount = 0.8
+shader_parameter/amount = 0.945
 shader_parameter/gradient = SubResource("GradientTexture2D_afqb1")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qjaso"]
+shader = ExtResource("10_6u7vm")
+shader_parameter/NumDivisions = 2022
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_urcby")
@@ -42,12 +51,12 @@ script = ExtResource("1_urcby")
 [node name="CanvasLayer4" type="CanvasLayer" parent="."]
 
 [node name="Sprite Disperser" parent="CanvasLayer4" instance=ExtResource("4_pevkq")]
-image_texture_list = Array[Texture2D]([ExtResource("3_5qbyu"), ExtResource("4_1jdor"), ExtResource("5_qnkoc"), ExtResource("6_giykg")])
+image_texture_list = Array[Texture2D]([ExtResource("3_5qbyu"), ExtResource("4_1jdor"), ExtResource("5_qnkoc"), ExtResource("6_giykg"), ExtResource("8_ifk4k"), ExtResource("9_nip2e"), ExtResource("10_e5jq7"), ExtResource("11_feg51")])
 size = 0.49
 size_jitter = 0.506
-noise_floor = 0.734
+noise_floor = 0.685
 b_is_noise_update = true
-update_time = 0.3
+update_time = 0.8
 parse_step_x = 80
 parse_step_y = 80
 parse_jitter = 1.0
@@ -59,6 +68,7 @@ offset_left = -1174.0
 offset_top = -742.0
 offset_right = 2760.0
 offset_bottom = 2016.0
+color = Color(1, 1, 1, 0)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 2
@@ -76,12 +86,12 @@ scale = Vector2(0.8, 0.8)
 transform = Transform2D(0.8, 0, 0, 0.8, 0, 0)
 
 [node name="Sprite Disperser2" parent="CanvasLayer3" instance=ExtResource("4_pevkq")]
-image_texture_list = Array[Texture2D]([ExtResource("3_5qbyu"), ExtResource("4_1jdor"), ExtResource("5_qnkoc"), ExtResource("6_giykg")])
-size = 0.548
+image_texture_list = Array[Texture2D]([ExtResource("8_ifk4k"), ExtResource("9_nip2e"), ExtResource("10_e5jq7"), ExtResource("11_feg51"), ExtResource("3_5qbyu"), ExtResource("4_1jdor"), ExtResource("5_qnkoc"), ExtResource("6_giykg")])
+size = 0.639
 size_jitter = 1.0
 noise_floor = 0.72
 b_is_noise_update = true
-update_time = 0.1
+update_time = 0.3
 parse_step_x = 80
 parse_step_y = 80
 parse_jitter = 1.0
@@ -90,9 +100,10 @@ spawn_jitter_y = 1.0
 
 [node name="Boundary" parent="CanvasLayer3/Sprite Disperser2/Resources" index="0"]
 offset_left = -1492.0
-offset_top = -919.0
+offset_top = 498.0
 offset_right = 3480.0
-offset_bottom = 2497.0
+offset_bottom = 2498.0
+color = Color(1, 1, 1, 0)
 
 [node name="CanvasLayer5" type="CanvasLayer" parent="."]
 layer = 4
@@ -108,7 +119,19 @@ offset_bottom = 1891.0
 layer = 5
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer2"]
+visible = false
 material = SubResource("ShaderMaterial_mrisa")
+offset_left = -2839.0
+offset_top = -1808.0
+offset_right = 3219.0
+offset_bottom = 1891.0
+
+[node name="CanvasLayer6" type="CanvasLayer" parent="."]
+layer = 6
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer6"]
+visible = false
+material = SubResource("ShaderMaterial_qjaso")
 offset_left = -2839.0
 offset_top = -1808.0
 offset_right = 3219.0

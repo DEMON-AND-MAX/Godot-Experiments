@@ -1,8 +1,4 @@
-res://scenes/world.tscn
 res://scenes/world.gdshader
 res://scenes/color.gdshader
-res://scenes/crop_white.gdshader
-res://scenes/area_spawner.tscn
-res://scenes/sprite_disperser.tscn
-res://sprite_disperser.gd
 res://scenes/rrrr.gdshader
+res://scenes/crop_white.gdshader

@@ -1,2 +1,4 @@
-res://control.tscn
-res://resource/test.tres
+res://script/status_handler.gd
+res://script/stat/stat.gd
+res://script/stat/stat_base.gd
+res://script/stat/stat_cap.gd

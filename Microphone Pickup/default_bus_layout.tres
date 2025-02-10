@@ -1,0 +1,49 @@
+[gd_resource type="AudioBusLayout" load_steps=5 format=3 uid="uid://oj5tgl4oxy7f"]
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_vhmlv"]
+resource_name = "Reverb"
+predelay_msec = 190.0
+predelay_feedback = 0.28
+room_size = 1.0
+damping = 0.56
+dry = 0.0
+wet = 1.0
+
+[sub_resource type="AudioEffectSpectrumAnalyzer" id="AudioEffectSpectrumAnalyzer_ph67j"]
+resource_name = "SpectrumAnalyzer"
+buffer_length = 0.2
+fft_size = 1
+
+[sub_resource type="AudioEffectEQ6" id="AudioEffectEQ6_0u6ja"]
+resource_name = "EQ6"
+band_db/32_hz = 7.2
+band_db/100_hz = 7.1
+band_db/320_hz = 4.8
+band_db/1000_hz = 0.8
+band_db/3200_hz = -2.4
+band_db/10000_hz = -5.6
+
+[sub_resource type="AudioEffectDelay" id="AudioEffectDelay_o25eu"]
+resource_name = "Delay"
+dry = 0.18
+tap1_delay_ms = 890.0
+tap1_level_db = -7.14
+tap1_pan = 0.0
+tap2_active = false
+feedback_level_db = 0.0
+
+[resource]
+bus/1/name = &"Vocal"
+bus/1/solo = false
+bus/1/mute = false
+bus/1/bypass_fx = false
+bus/1/volume_db = -24.9389
+bus/1/send = &"Master"
+bus/1/effect/0/effect = SubResource("AudioEffectReverb_vhmlv")
+bus/1/effect/0/enabled = true
+bus/1/effect/1/effect = SubResource("AudioEffectSpectrumAnalyzer_ph67j")
+bus/1/effect/1/enabled = true
+bus/1/effect/2/effect = SubResource("AudioEffectEQ6_0u6ja")
+bus/1/effect/2/enabled = true
+bus/1/effect/3/effect = SubResource("AudioEffectDelay_o25eu")
+bus/1/effect/3/enabled = true

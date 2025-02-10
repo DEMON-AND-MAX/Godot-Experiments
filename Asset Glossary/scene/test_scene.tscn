@@ -1,14 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://dwa1cjf8t811t"]
+[gd_scene load_steps=6 format=3 uid="uid://dwa1cjf8t811t"]
 
 [ext_resource type="Script" path="res://script/test/test.gd" id="1_0oaxn"]
 [ext_resource type="Script" path="res://script/asset_glossary.gd" id="2_somsm"]
 [ext_resource type="Script" path="res://script/directory_data.gd" id="3_cmrl2"]
 
+[sub_resource type="Resource" id="Resource_s45au"]
+script = ExtResource("3_cmrl2")
+name = ""
+dir_path = ""
+subdir_list = Array[ExtResource("3_cmrl2")]([])
+allow_extension_list = Array[String]([])
+b_is_allow_impose = false
+max_dir_depth = 2
+b_is_file_depth_max = false
+b_is_file_dir_exclusive = false
+
 [sub_resource type="Resource" id="Resource_snpvt"]
 script = ExtResource("3_cmrl2")
 name = "asset"
 dir_path = "res://asset"
-subdir_list = Array[ExtResource("3_cmrl2")]([])
+subdir_list = Array[ExtResource("3_cmrl2")]([SubResource("Resource_s45au")])
 allow_extension_list = Array[String]([])
 b_is_allow_impose = false
 max_dir_depth = 3
