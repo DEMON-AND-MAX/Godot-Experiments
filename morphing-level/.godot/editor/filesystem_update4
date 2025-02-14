@@ -1,0 +1,7 @@
+res://scenes/world.tscn
+res://morphing_level/level.gd
+res://morphing_level/level_stages.gd
+res://morphing_level/morphing_level.gd
+res://morphing_level/stage.gd
+res://morphing_scenes/example/Level_Stage_0.tres
+res://morphing_scenes/example/Level.tres

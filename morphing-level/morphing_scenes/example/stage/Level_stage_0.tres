@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="Stage" load_steps=2 format=3 uid="uid://brg7pwv2t0fil"]
+
+[ext_resource type="Script" path="res://morphing_level/stage.gd" id="1_ivuh5"]
+
+[resource]
+script = ExtResource("1_ivuh5")
+stage = {
+"MeshInstance3D": {
+"position": Vector3(0, 0, 0),
+"rotation": Vector3(0, 0, 0),
+"scale": Vector3(1, 1, 1)
+},
+"MeshInstance3D2": {
+"position": Vector3(2, 0, 0),
+"rotation": Vector3(0, 0, 0),
+"scale": Vector3(1, 1, 1)
+},
+"MeshInstance3D3": {
+"position": Vector3(-2, 0, -0.00666177),
+"rotation": Vector3(0, 0, 0),
+"scale": Vector3(1, 1, 1)
+}
+}
+transition_speed = 0.3
+transition_type = 0
+ease_type = 0

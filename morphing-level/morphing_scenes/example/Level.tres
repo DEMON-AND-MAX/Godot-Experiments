@@ -1,0 +1,77 @@
+[gd_resource type="Resource" script_class="Level" load_steps=6 format=3 uid="uid://kg5yvvsaol8s"]
+
+[ext_resource type="Script" path="res://morphing_level/stage.gd" id="1_7ksa5"]
+[ext_resource type="Script" path="res://morphing_level/level.gd" id="2_qnbm5"]
+
+[sub_resource type="Resource" id="Resource_4i03h"]
+script = ExtResource("1_7ksa5")
+stage = {
+"MeshInstance3D": {
+"position": Vector3(0, 0, 0),
+"rotation": Vector3(0, 0, 0),
+"scale": Vector3(1, 1, 1)
+},
+"MeshInstance3D2": {
+"position": Vector3(2, 0, 0),
+"rotation": Vector3(0, 0, 0),
+"scale": Vector3(1, 1, 1)
+},
+"MeshInstance3D3": {
+"position": Vector3(-2, 0, -0.00666177),
+"rotation": Vector3(0, 0, 0),
+"scale": Vector3(1, 1, 1)
+}
+}
+transition_speed = 0.3
+transition_type = 0
+ease_type = 0
+
+[sub_resource type="Resource" id="Resource_xpc0q"]
+script = ExtResource("1_7ksa5")
+stage = {
+"MeshInstance3D": {
+"position": Vector3(1.84073, 0, 1.47265),
+"rotation": Vector3(0, 0, 0),
+"scale": Vector3(1, 1, 1)
+},
+"MeshInstance3D2": {
+"position": Vector3(2, 0, -1.63215),
+"rotation": Vector3(0, 0, 0),
+"scale": Vector3(1, 1, 1)
+},
+"MeshInstance3D3": {
+"position": Vector3(-2, 0, -0.00666177),
+"rotation": Vector3(0, 0, 0),
+"scale": Vector3(1, 1, 1)
+}
+}
+transition_speed = 0.3
+transition_type = 0
+ease_type = 0
+
+[sub_resource type="Resource" id="Resource_3eveo"]
+script = ExtResource("1_7ksa5")
+stage = {
+"MeshInstance3D": {
+"position": Vector3(1.84073, 0, 1.47265),
+"rotation": Vector3(0, 0.735796, 0),
+"scale": Vector3(1, 1, 1)
+},
+"MeshInstance3D2": {
+"position": Vector3(2, 0, -1.63215),
+"rotation": Vector3(0, -0.810252, 0),
+"scale": Vector3(1, 1, 1)
+},
+"MeshInstance3D3": {
+"position": Vector3(0.475818, 0, -0.00666177),
+"rotation": Vector3(0, 0, 0),
+"scale": Vector3(2.005, 2.005, 2.005)
+}
+}
+transition_speed = 0.3
+transition_type = 0
+ease_type = 0
+
+[resource]
+script = ExtResource("2_qnbm5")
+level = Array[ExtResource("1_7ksa5")]([SubResource("Resource_4i03h"), SubResource("Resource_xpc0q"), SubResource("Resource_3eveo")])

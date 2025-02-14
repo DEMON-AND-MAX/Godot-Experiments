@@ -1,0 +1,15 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1739455292
+icon.svg::CompressedTexture2D::5758245554334623476::1739209180::1739209189::1::::<><>::
+::res://morphing_level/::1739455477
+level_stages.gd::GDScript::-1::1739455477::0::1::::Level<>Resource<>::
+morphing_level.gd::GDScript::-1::1739455734::0::1::::MorphingLevel<>Node3D<>::
+stage.gd::GDScript::-1::1739455265::0::1::::Stage<>Resource<>::
+::res://morphing_scenes/::1739213192
+::res://morphing_scenes/example/::1739294705
+Level1.json::JSON::-1::1739294690::0::1::::<><>::
+Level2.json::JSON::-1::1739294698::0::1::::<><>::
+Level3.json::JSON::-1::1739294705::0::1::::<><>::
+::res://scenes/::1739455477
+morphing_level.tscn::PackedScene::3993532444765785101::1739291939::0::1::::<><>::res://morphing_level/morphing_level.gd
+world.tscn::PackedScene::8882652557038058721::1739455741::0::1::::<><>::uid://bw5q5pwtkevxl::::res://scenes/morphing_level.tscn<>res://morphing_level/stage.gd<>res://morphing_level/level_stages.gd
