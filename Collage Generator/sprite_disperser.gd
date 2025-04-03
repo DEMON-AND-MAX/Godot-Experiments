@@ -67,7 +67,7 @@ func generate() -> void:
 			if rotation_random > 0:
 				new_sprite.rotation_degrees += randf_range(-rotation_random, rotation_random) * 180
 			
-			new_sprite.material = load("res://scenes/new_shader_material.tres")
+			#new_sprite.material = load("res://scenes/new_shader_material.tres")
 			
 			$Sprites.add_child(new_sprite)
 	if b_is_noise_update:
