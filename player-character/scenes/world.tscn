@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://qtx5i15jg3o6"]
+
+[ext_resource type="Script" path="res://player/script/player.gd" id="1_g83np"]
+[ext_resource type="Texture2D" uid="uid://naqr7lqgtoa5" path="res://assets/prototype_textures/Dark/texture_13.png" id="2_u872t"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d34uk"]
+height = 1.8
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kxksv"]
+height = 1.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2a1sp"]
+albedo_texture = ExtResource("2_u872t")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+uv1_world_triplanar = true
+uv2_world_triplanar = true
+
+[sub_resource type="Environment" id="Environment_2r8ax"]
+background_mode = 1
+background_color = Color(0.267593, 0.311407, 0.367585, 1)
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+
+[node name="World" type="Node3D"]
+
+[node name="Player" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+script = ExtResource("1_g83np")
+
+[node name="Collision Standing" type="CollisionShape3D" parent="Player"]
+shape = SubResource("CapsuleShape3D_d34uk")
+
+[node name="Collision Crouching" type="CollisionShape3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 0)
+shape = SubResource("CapsuleShape3D_kxksv")
+disabled = true
+
+[node name="Check Above Head" type="RayCast3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+target_position = Vector3(0, 1.8, 0)
+
+[node name="Neck" type="Node3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+
+[node name="Head" type="Node3D" parent="Player/Neck"]
+
+[node name="Camera" type="Camera3D" parent="Player/Neck/Head"]
+
+[node name="Floor" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, -5)
+use_collision = true
+size = Vector3(37, 1, 29)
+material = SubResource("StandardMaterial3D_2a1sp")
+
+[node name="Floor2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 2.5, -5)
+use_collision = true
+size = Vector3(6.49805, 1, 29)
+material = SubResource("StandardMaterial3D_2a1sp")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_2r8ax")
